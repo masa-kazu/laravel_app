@@ -1,4 +1,14 @@
 services:
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        links:
+            - mysql:mysql
+        ports:
+            - 8888:80
+        environment:
+            PMA_HOST: mysql
+        networks:
+            - sail
     laravel.test:
         build:
             context: ./vendor/laravel/sail/runtimes/8.3
@@ -33,7 +43,7 @@ services:
             - '${FORWARD_DB_PORT:-3306}:3306'
         environment:
             MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
-            MYSQL_ROOT_HOST: '%'
+            MYSQL_ROOT_HOST: '${DB_HOST}'
             MYSQL_DATABASE: '${DB_DATABASE}'
             MYSQL_USER: '${DB_USERNAME}'
             MYSQL_PASSWORD: '${DB_PASSWORD}'
