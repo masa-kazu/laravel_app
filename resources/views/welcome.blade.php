@@ -21,15 +21,27 @@
                 <h1>掲示板アプリ作ってみました。</h1>
             </div>
             <section>
-                <div class="wrapper">
-                    <div class="nameArea">
-                        <span>名前：</span>
-                        <p class="username">masa</p>
-                        <time>:2024/8/13 22:40</time>
+                <article>
+                    <div class="wrapper">
+                        <div class="nameArea">
+                            <span>名前：</span>
+                            <p class="username">masa</p>
+                            <time>：2024/8/13 22:40</time>
+                        </div>
+                        <p class="comment">手書きのコメントです。</p>
                     </div>
-                    <p class="comment">手書きのコメントです。</p>
-                </div>
+                </article>
             </section>
+            <form action="" class="formWrapper">
+                <div>
+                    <input type="submit" value="書き込む">
+                    <label form="">名前：</label>
+                    <input type="text">
+                </div>
+                <div>
+                    <textarea class="commentTextArea"></textarea>
+                </div>
+            </form>
         </div>
     </div>
 
