@@ -1,3 +1,15 @@
+<?php
+
+include_once("../database/connect.php");
+
+if (isset($_POST["submitButton"])) {
+    $username = $_POST["username"];
+    var_dump($username);
+    $body = $_POST["body"];
+    var_dump($body);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,14 +44,14 @@
                     </div>
                 </article>
             </section>
-            <form action="" class="formWrapper">
+            <form action="" class="formWrapper" method="POST">
                 <div>
-                    <input type="submit" value="書き込む">
+                    <input type="submit" value="書き込む" name="submitButton">
                     <label form="">名前：</label>
-                    <input type="text">
+                    <input type="text" name="username">
                 </div>
                 <div>
-                    <textarea class="commentTextArea"></textarea>
+                    <textarea class="commentTextArea" name="body"></textarea>
                 </div>
             </form>
         </div>
